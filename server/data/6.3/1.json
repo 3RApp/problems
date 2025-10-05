@@ -1,0 +1,28 @@
+{
+  "heading": "Конфигурация: RouterProvider, Layout/Outlet, страницы и бизнес-компоненты",
+  "chapter": "6.3",
+  "input_data": "Корнем дерева является RouterProvider. Layout — родительский маршрут, использующий Outlet для рендеринга дочерних страниц. Страницы размещаются на одном уровне: BookPage, AuthorPage, CartPage, LoginPage. Бизнес-компоненты располагаются под страницами: BookList/BookCard, AuthorList/AuthorCard, Cart, LoginForm.",
+  "problem": [
+    {
+      "type": "array",
+      "title": "Задания",
+      "array": [
+        "Определить конфигурацию маршрутов через createBrowserRouter: корневой элемент Layout (родительский маршрут), дочерние маршруты: /books → BookPage, /authors → AuthorPage, /cart → CartPage, /login → LoginPage. На уровне index-маршрута выполнить редирект на /books.",
+        "Реализовать Layout с использованием Outlet и навигацией на /books, /authors, /cart, /login.",
+        "Реализовать страницы BookPage, AuthorPage, CartPage, LoginPage. Бизнес-логика на уровне страниц не размещается; страницы компонируют бизнес-компоненты.",
+        "Реализовать бизнес-компоненты: BookList, BookCard (для BookPage); AuthorList, AuthorCard (для AuthorPage); Cart (для CartPage); LoginForm (для LoginPage). Визуализация — минимальный JSX, подтверждающий происхождение компонента.",
+        "Добавить защиту маршрута /cart через ProtectedRoute (неавторизованный доступ перенаправляется на /login).",
+        "Добавить errorElement на корневом и дочерних маршрутах.",
+        "Реализовать ленивую загрузку страниц посредством React.lazy (или lazy-конфигурации) и Suspense в Layout.",
+        "Подготовить схему иерархии: RouterProvider → Layout → BookPage/AuthorPage/CartPage/LoginPage → соответствующие бизнес-компоненты."
+      ]
+    }
+  ],
+  "expected_result": "Определена конфигурация с RouterProvider и Layout/Outlet; страницы находятся на одном уровне; бизнес-компоненты размещены под соответствующими страницами; реализованы защита маршрута /cart, errorElement и ленивая загрузка; подготовлена схема иерархии.",
+  "objectives": [
+    "Фиксация ролей уровней: RouterProvider как корень, Layout как родительский маршрут, *Page* — уровень страниц, бизнес-компоненты — уровень ниже.",
+    "Формирование конфигурации через объектный стиль (createBrowserRouter) с errorElement и защитой маршрутов.",
+    "Композиция страниц из бизнес-компонентов без дублирования логики на уровне маршрутов.",
+    "Использование ленивой загрузки для оптимизации."
+  ]
+}

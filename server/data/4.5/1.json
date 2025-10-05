@@ -1,0 +1,27 @@
+{
+  "heading": "Использование Middleware и Enhancer в Redux",
+  "chapter": "Раздел 21. Middleware. Enhancer",
+  "input_data": "Middleware и Enhancer позволяют расширять функциональность Redux без изменения логики редьюсеров. Middleware — это промежуточный слой для обработки экшенов, Enhancer — функция высшего порядка, модифицирующая сам стор.",
+  "problem": [
+    {
+      "type": "array",
+      "title": "Задания",
+      "array": [
+        "Создайте middleware, которое перехватывает экшены с типом 'INCREMENT' и откладывает их выполнение на 1 секунду.",
+        "Используя applyMiddleware, подключите созданное middleware к стору.",
+        "Создайте enhancer, который будет отслеживать предыдущее состояние и выводить разницу при каждом dispatch.",
+        "Объедините enhancer с applyMiddleware с помощью функции compose.",
+        "Продемонстрируйте на примере: отправьте экшены INCREMENT и DECREMENT и покажите, как middleware и enhancer обрабатывают их.",
+        "Объясните разницу между вызовом next(action) и store.dispatch(action) внутри middleware."
+      ]
+    }
+  ],
+  "expected_result": "Реализация middleware для задержки экшена, enhancer для отслеживания изменений состояния и их интеграция в Redux store. Демонстрация различий между next и store.dispatch.",
+  "objectives": [
+    "Научиться писать middleware для обработки экшенов.",
+    "Понять разницу между next и store.dispatch.",
+    "Закрепить навык подключения нескольких расширений через compose.",
+    "Освоить принцип написания enhancer и его отличие от middleware.",
+    "Смоделировать взаимодействие middleware и enhancer в одном проекте."
+  ]
+}
